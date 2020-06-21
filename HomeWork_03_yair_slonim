@@ -1,0 +1,46 @@
+using System;
+using System.Numerics;
+using System.Threading.Tasks.Dataflow;
+
+namespace HomeWork2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            String[][] matrix = new String[3][];
+
+            for(int row = 0;row<matrix.Length;row++)
+            {
+
+                for(int col =0; col < matrix.Length; col++)
+                {
+                    if(col == row&& row!=1 && col!=1)
+                    {
+                        Console.Write("[main\t]"); 
+                    }
+                    else if (row==1 && col==1 )
+                    {
+                        Console.Write("[center]\t");
+                    }
+
+                    else if(row+col == (matrix.Length - 1)){
+                        Console.Write("[sub]\t");
+                    }
+                    else if (row < col)
+                    {
+                        Console.Write("[up]\t");
+                    }
+                    else if (row > col)
+                    {
+                        Console.Write("[down]\t");
+                    }
+                }
+                Console.WriteLine();
+    }
+            Console.ReadKey();
+        }
+    }
+    
+}
